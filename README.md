@@ -11,17 +11,17 @@ They will use .push to add new songs to their playlist. Then, students will refa
 
 ## Set-Up
 1. [x] Fork your own copy of the repl.
-2. [ ] Double-check that you are signed in with your GitHub account.
+2. [x] Double-check that you are signed in with your GitHub account.
 
 
 ## Planning
-3. [ ] Complete the planning document.
-   - [ ] Look over Inspiration and Ideas
-   - [ ] Fill out the Brainstorm section.
-   - [ ] Fill out the Song Data section.
-4. [ ] Read through the HTML starter code to understand the organization and class names given.
-5. [ ] Read through the JavaScript starter code to determine where each given function is declared and where each given function is called.
-6. [ ] Declare variables for your display divs: the image url, song name, artist, and song link. Go back to the HTML to check that you are using the correct class names.
+3. [x] Complete the planning document.
+   - [x] Look over Inspiration and Ideas
+   - [x] Fill out the Brainstorm section.
+   - [x] Fill out the Song Data section.
+4. [x] Read through the HTML starter code to understand the organization and class names given.
+5. [x] Read through the JavaScript starter code to determine where each given function is declared and where each given function is called.
+6. [x] Declare variables for your display divs: the image url, song name, artist, and song link. Go back to the HTML to check that you are using the correct class names.
 
 
 ## JavaScript: Storing Song Data

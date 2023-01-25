@@ -12,12 +12,19 @@ let add = document.querySelector(".add");
 
 
 // task 6: declare variables for your display divs: the image url, song name, artist, and song link. Go back to the HTML to check that you are using the correct class names.
-
+let imageColumn = document.querySelector("column display-image");
+let songColumn = document.querySelector("column display-song");
+let linkColumn = document.querySelector("column display-link");
+let artistColumn = document.querySelector("column display-artist");
 
 
 
 // task 7: create and populate an array to store your image urls. Create three more arrays. One to store your song names, one for the artists, and a last one for the song links.
 
+let songs = []
+let artists = []
+let images = []
+let links = []
 
 
 
