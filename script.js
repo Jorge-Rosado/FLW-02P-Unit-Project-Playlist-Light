@@ -12,19 +12,19 @@ let add = document.querySelector(".add");
 
 
 // task 6: declare variables for your display divs: the image url, song name, artist, and song link. Go back to the HTML to check that you are using the correct class names.
-let imageColumn = document.querySelector("column display-image");
-let songColumn = document.querySelector("column display-song");
-let linkColumn = document.querySelector("column display-link");
-let artistColumn = document.querySelector("column display-artist");
+let imageColumn = document.querySelector(".column-display-image");
+let songColumn = document.querySelector(".column-display-song");
+let linkColumn = document.querySelector(".column-display-link");
+let artistColumn = document.querySelector(".column-display-artist");
 
 
 
 // task 7: create and populate an array to store your image urls. Create three more arrays. One to store your song names, one for the artists, and a last one for the song links.
 
-let songs = []
-let artists = []
-let images = []
-let links = []
+let songs = ["The Adults are Talking", "Brianstrom", "Swing Lynn", "Freak", "Oh Yeah, You Gonna Cry?"]
+let artists = ["The Strokes", "Artic Monkeys", "Harmless", "Surf Curse", "LoveJoy"]
+let images = ["https://i.ytimg.com/an/ewOPQZZn4SY/3310886337468975411_mq.jpg?v=5fc90861", "https://i.scdn.co/image/ab67616d0000b2730c8ac83035e9588e8ad34b90", "https://i.scdn.co/image/ab67616d0000b273279c10fd08546bba5039f095", "https://upload.wikimedia.org/wikipedia/en/a/a1/Freaks_Surf_Curse.jpg", "https://i1.sndcdn.com/artworks-umTDXaIFlbhyUzs7-zqwyKQ-t500x500.png"]
+let links = ["https://www.youtube.com/watch?v=ewOPQZZn4SY", "https://www.youtube.com/watch?v=30w8DyEJ__0", "https://www.youtube.com/watch?v=D7DVSZ_poHk", "https://www.youtube.com/watch?v=RJnMWK9mrgQ", "https://www.youtube.com/watch?v=uDC0X3w3Cv8"]
 
 
 
@@ -72,9 +72,21 @@ function emptyDisplay() {
 function displaySongInfo() {
 
 // task 8: loop through your images array and display the images to your songs in the correct div. Create three more loops. One for the song names, one for the artists, and a last one for the song links.
+images.forEach(function (image){
+imageColumn.insertAdjacentHTML("beforeend", `<p><img src="${image}"></p>`)
+});
 
+  songs.forEach(function (song){
+songColumn.insertAdjacentHTML("beforeend", `<p>${song}</p>`)
+});
 
+  artists.forEach(function (art){
+artistColumn.insertAdjacentHTML("beforeend", `<p>${art}</p>`)
+});
 
+  links.forEach(function (link){
+linkColumn.insertAdjacentHTML("beforeend", `<a href="${link}">Listen</a></p>`)
+});
 }
 
 

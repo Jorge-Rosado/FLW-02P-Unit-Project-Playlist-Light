@@ -28,28 +28,28 @@ h1 {
   }
 }
 
-.display-image img {
+.column-display-image img {
   display: block;
   height: 100px;
   width: auto;
   
 }
 
-.display-song p {
+.column-display-song p {
   font-size: 18px;
   height: 100px;
   font-weight: bold;
   
 }
 
-.display-artist p {
+.column-display-artist p {
   font-size: 18px;
   height: 100px;
   
 }
 
 
-.display-link a {
+.column-display-link a {
   display: block;
   font-size: 18px;
   height: 100px;
