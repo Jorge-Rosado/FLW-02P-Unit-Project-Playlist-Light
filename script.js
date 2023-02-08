@@ -12,10 +12,10 @@ let add = document.querySelector(".add");
 
 
 // task 6: declare variables for your display divs: the image url, song name, artist, and song link. Go back to the HTML to check that you are using the correct class names.
-let imageColumn = document.querySelector(".column-display-image");
-let songColumn = document.querySelector(".column-display-song");
-let linkColumn = document.querySelector(".column-display-link");
-let artistColumn = document.querySelector(".column-display-artist");
+let imageColumn = document.querySelector(".display-image");
+let songColumn = document.querySelector(".display-song");
+let linkColumn = document.querySelector(".display-link");
+let artistColumn = document.querySelector(".display-artist");
 
 
 
@@ -49,10 +49,15 @@ let links = ["https://www.youtube.com/watch?v=ewOPQZZn4SY", "https://www.youtube
 function addSongInfo() {
 
 // task 9: declare a variable to save the user input of the image url. Declare three more variables that save user input: One for the song names, one for the artists, and a last one for the song links.
-
-
+let imageInput = image.value
+let songInput = songName.value
+let artistInput = artist.value
+  let songLinkInput = songLink.value
 // task 10: use `.push()` to add each input value to the correct array.
-
+images.push(imageInput)
+artists.push(artistInput)
+songs.push(songInput)
+links.push(songLinkInput)
 }
 
 
@@ -60,10 +65,10 @@ function addSongInfo() {
 
 /******** this function empties the display divs each time the button is clicked so that your playlist does not repeatedly add the data too many times. Where should this function be placed???********/
 function emptyDisplay() {
-  displayImage.innerHTML = "";
-  displaySong.innerHTML = "";
-  displayArtist.innerHTML = "";
-  displayLink.innerHTML = "";
+  songColumn.innerHTML = "";
+  artistColumn.innerHTML = "";
+  linkColumn.innerHTML = "";
+  imageColumn.innerHTML = "";
 }
 
 
@@ -95,6 +100,7 @@ linkColumn.insertAdjacentHTML("beforeend", `<a href="${link}">Listen</a></p>`)
 
 // click event to add and display songs
 add.onclick = function() {
+  emptyDisplay();
   addSongInfo();
   displaySongInfo();
 };
