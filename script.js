@@ -20,10 +20,13 @@ let artistColumn = document.querySelector(".display-artist");
 
 
 // task 7: create and populate an array to store your image urls. Create three more arrays. One to store your song names, one for the artists, and a last one for the song links.
-
+//array that holds song names
 let songs = ["The Adults are Talking", "Brianstrom", "Swing Lynn", "Freak", "Oh Yeah, You Gonna Cry?"]
+//array that holds artist names for songs
 let artists = ["The Strokes", "Artic Monkeys", "Harmless", "Surf Curse", "LoveJoy"]
+//array that holds images for songs
 let images = ["https://i.ytimg.com/an/ewOPQZZn4SY/3310886337468975411_mq.jpg?v=5fc90861", "https://i.scdn.co/image/ab67616d0000b2730c8ac83035e9588e8ad34b90", "https://i.scdn.co/image/ab67616d0000b273279c10fd08546bba5039f095", "https://upload.wikimedia.org/wikipedia/en/a/a1/Freaks_Surf_Curse.jpg", "https://i1.sndcdn.com/artworks-umTDXaIFlbhyUzs7-zqwyKQ-t500x500.png"]
+//array that hold links for songs
 let links = ["https://www.youtube.com/watch?v=ewOPQZZn4SY", "https://www.youtube.com/watch?v=30w8DyEJ__0", "https://www.youtube.com/watch?v=D7DVSZ_poHk", "https://www.youtube.com/watch?v=RJnMWK9mrgQ", "https://www.youtube.com/watch?v=uDC0X3w3Cv8"]
 
 
@@ -32,9 +35,39 @@ let links = ["https://www.youtube.com/watch?v=ewOPQZZn4SY", "https://www.youtube
 //REFACTOR ARRAYS DAY 
 // task 11: comment out the arrays data.
 // task 12: create an object for each of your songs.
+let song1 = {
+  songName: "The Adults are Talking",
+  artist: "The Strokes",
+  image: "https://i.ytimg.com/an/ewOPQZZn4SY/3310886337468975411_mq.jpg?v=5fc90861",
+  link: "https://www.youtube.com/watch?v=ewOPQZZn4SY",
+}
+let song2 = {
+  songName: "Brainstorm",
+  artist: "Artic Monkeys",
+  image: "https://i.scdn.co/image/ab67616d0000b2730c8ac83035e9588e8ad34b90",
+  link: "https://www.youtube.com/watch?v=30w8DyEJ__0",
+}
+let song3 = {
+  songName: "Swing Lynn",
+  artist: "Harmless",
+  image: "https://i.scdn.co/image/ab67616d0000b273279c10fd08546bba5039f095",
+  link: "https://www.youtube.com/watch?v=D7DVSZ_poHk",
+}
+let song4 = {
+  songName: "Freak",
+  artist: "Surf Curse",
+  image: "https://upload.wikimedia.org/wikipedia/en/a/a1/Freaks_Surf_Curse.jpg",
+  link: "https://www.youtube.com/watch?v=RJnMWK9mrgQ",
+}
+let song5 = {
+  songName: "Oh Yeah, You Gonna Cry?",
+  aritst: "LoveJoy",
+  image: "https://i1.sndcdn.com/artworks-umTDXaIFlbhyUzs7-zqwyKQ-t500x500.png",
+  link: "https://www.youtube.com/watch?v=uDC0X3w3Cv8",
+}
 // task 13: inside each object, add key/value pairs to store the image url, song name, artist, and song link.
 // task 14: create an array that stores all of the objects.
-
+let completeSongs = [song1, song2, song3, song4, song5]
 
 
 //REFACTOR LOOPS DAY 
@@ -49,15 +82,27 @@ let links = ["https://www.youtube.com/watch?v=ewOPQZZn4SY", "https://www.youtube
 function addSongInfo() {
 
 // task 9: declare a variable to save the user input of the image url. Declare three more variables that save user input: One for the song names, one for the artists, and a last one for the song links.
-let imageInput = image.value
-let songInput = songName.value
-let artistInput = artist.value
-  let songLinkInput = songLink.value
+  //saves user input
+  let newSong = {
+    songName: songName.value,
+    artist: artist.value,
+    image: image.value,
+    link: songLink.value
+  }
+console.log(newSong)
+//let imageInput = image.value
+//let songInput = songName.value
+//let artistInput = artist.value
+ // let songLinkInput = songLink.value
+  
 // task 10: use `.push()` to add each input value to the correct array.
-images.push(imageInput)
-artists.push(artistInput)
-songs.push(songInput)
-links.push(songLinkInput)
+  
+//images.push(imageInput)
+//artists.push(artistInput)
+//songs.push(songInput)
+//links.push(songLinkInput)
+  completeSongs.push(newSong)
+  console.log(completeSongs)
 }
 
 
