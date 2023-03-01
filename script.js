@@ -9,6 +9,7 @@ let songLink = document.querySelector(".song-link");
 
 // button variable
 let add = document.querySelector(".add");
+let clear = document.querySelector(".clear")
 
 
 // task 6: declare variables for your display divs: the image url, song name, artist, and song link. Go back to the HTML to check that you are using the correct class names.
@@ -21,13 +22,13 @@ let artistColumn = document.querySelector(".display-artist");
 
 // task 7: create and populate an array to store your image urls. Create three more arrays. One to store your song names, one for the artists, and a last one for the song links.
 //array that holds song names
-let songs = ["The Adults are Talking", "Brianstrom", "Swing Lynn", "Freak", "Oh Yeah, You Gonna Cry?"]
+//let songs = ["The Adults are Talking", "Brianstrom", "Swing Lynn", "Freak", "Oh Yeah, You Gonna Cry?"]
 //array that holds artist names for songs
-let artists = ["The Strokes", "Artic Monkeys", "Harmless", "Surf Curse", "LoveJoy"]
+//let artists = ["The Strokes", "Artic Monkeys", "Harmless", "Surf Curse", "LoveJoy"]
 //array that holds images for songs
-let images = ["https://i.ytimg.com/an/ewOPQZZn4SY/3310886337468975411_mq.jpg?v=5fc90861", "https://i.scdn.co/image/ab67616d0000b2730c8ac83035e9588e8ad34b90", "https://i.scdn.co/image/ab67616d0000b273279c10fd08546bba5039f095", "https://upload.wikimedia.org/wikipedia/en/a/a1/Freaks_Surf_Curse.jpg", "https://i1.sndcdn.com/artworks-umTDXaIFlbhyUzs7-zqwyKQ-t500x500.png"]
+//let images = ["https://i.ytimg.com/an/ewOPQZZn4SY/3310886337468975411_mq.jpg?v=5fc90861", "https://i.scdn.co/image/ab67616d0000b2730c8ac83035e9588e8ad34b90", "https://i.scdn.co/image/ab67616d0000b273279c10fd08546bba5039f095", "https://upload.wikimedia.org/wikipedia/en/a/a1/Freaks_Surf_Curse.jpg", "https://i1.sndcdn.com/artworks-umTDXaIFlbhyUzs7-zqwyKQ-t500x500.png"]
 //array that hold links for songs
-let links = ["https://www.youtube.com/watch?v=ewOPQZZn4SY", "https://www.youtube.com/watch?v=30w8DyEJ__0", "https://www.youtube.com/watch?v=D7DVSZ_poHk", "https://www.youtube.com/watch?v=RJnMWK9mrgQ", "https://www.youtube.com/watch?v=uDC0X3w3Cv8"]
+//let links = ["https://www.youtube.com/watch?v=ewOPQZZn4SY", "https://www.youtube.com/watch?v=30w8DyEJ__0", "https://www.youtube.com/watch?v=D7DVSZ_poHk", "https://www.youtube.com/watch?v=RJnMWK9mrgQ", "https://www.youtube.com/watch?v=uDC0X3w3Cv8"]
 
 
 
@@ -61,7 +62,7 @@ let song4 = {
 }
 let song5 = {
   songName: "Oh Yeah, You Gonna Cry?",
-  aritst: "LoveJoy",
+  artist: "LoveJoy",
   image: "https://i1.sndcdn.com/artworks-umTDXaIFlbhyUzs7-zqwyKQ-t500x500.png",
   link: "https://www.youtube.com/watch?v=uDC0X3w3Cv8",
 }
@@ -89,7 +90,7 @@ function addSongInfo() {
     image: image.value,
     link: songLink.value
   }
-console.log(newSong)
+
 //let imageInput = image.value
 //let songInput = songName.value
 //let artistInput = artist.value
@@ -102,7 +103,6 @@ console.log(newSong)
 //songs.push(songInput)
 //links.push(songLinkInput)
   completeSongs.push(newSong)
-  console.log(completeSongs)
 }
 
 
@@ -116,27 +116,23 @@ function emptyDisplay() {
   imageColumn.innerHTML = "";
 }
 
-
+function emptySongArray () {
+  completeSongs = []
+}
 
 
 function displaySongInfo() {
 
 // task 8: loop through your images array and display the images to your songs in the correct div. Create three more loops. One for the song names, one for the artists, and a last one for the song links.
-images.forEach(function (image){
-imageColumn.insertAdjacentHTML("beforeend", `<p><img src="${image}"></p>`)
-});
-
-  songs.forEach(function (song){
-songColumn.insertAdjacentHTML("beforeend", `<p>${song}</p>`)
-});
-
-  artists.forEach(function (art){
-artistColumn.insertAdjacentHTML("beforeend", `<p>${art}</p>`)
-});
-
-  links.forEach(function (link){
-linkColumn.insertAdjacentHTML("beforeend", `<a href="${link}">Listen</a></p>`)
-});
+  
+  
+completeSongs.forEach(function (song){
+  imageColumn.insertAdjacentHTML("beforeend", `<p><img src="${song.image}"></p>`)
+  songColumn.insertAdjacentHTML("beforeend", `<p>${song.songName}</p>`)
+  artistColumn.insertAdjacentHTML("beforeend", `<p>${song.artist}</p>`)
+  linkColumn.insertAdjacentHTML("beforeend", `<a href="${song.link}">Listen</a></p>`)
+  });
+    console.log(completeSongs)
 }
 
 
@@ -149,6 +145,10 @@ add.onclick = function() {
   addSongInfo();
   displaySongInfo();
 };
-
+// click event to clear songs
+clear.onclick = function() {
+  emptyDisplay();
+  emptySongArray();
+}
 // function call to display stored songs
 displaySongInfo();
