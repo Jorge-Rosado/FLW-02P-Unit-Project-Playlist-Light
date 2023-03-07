@@ -1,5 +1,5 @@
 // task 5: read through the JavaScript starter code to determine where each given function is declared and where each given function is called.
-
+let songLengthHeading = document.querySelector(".songlength")
 
 // input variables
 let image = document.querySelector(".image");
@@ -10,6 +10,7 @@ let songLink = document.querySelector(".song-link");
 // button variable
 let add = document.querySelector(".add");
 let clear = document.querySelector(".clear")
+let shuffle = document.querySelector(".shuffle")
 
 
 // task 6: declare variables for your display divs: the image url, song name, artist, and song link. Go back to the HTML to check that you are using the correct class names.
@@ -21,13 +22,13 @@ let artistColumn = document.querySelector(".display-artist");
 
 
 // task 7: create and populate an array to store your image urls. Create three more arrays. One to store your song names, one for the artists, and a last one for the song links.
-//array that holds song names
+
 //let songs = ["The Adults are Talking", "Brianstrom", "Swing Lynn", "Freak", "Oh Yeah, You Gonna Cry?"]
-//array that holds artist names for songs
+
 //let artists = ["The Strokes", "Artic Monkeys", "Harmless", "Surf Curse", "LoveJoy"]
-//array that holds images for songs
+
 //let images = ["https://i.ytimg.com/an/ewOPQZZn4SY/3310886337468975411_mq.jpg?v=5fc90861", "https://i.scdn.co/image/ab67616d0000b2730c8ac83035e9588e8ad34b90", "https://i.scdn.co/image/ab67616d0000b273279c10fd08546bba5039f095", "https://upload.wikimedia.org/wikipedia/en/a/a1/Freaks_Surf_Curse.jpg", "https://i1.sndcdn.com/artworks-umTDXaIFlbhyUzs7-zqwyKQ-t500x500.png"]
-//array that hold links for songs
+
 //let links = ["https://www.youtube.com/watch?v=ewOPQZZn4SY", "https://www.youtube.com/watch?v=30w8DyEJ__0", "https://www.youtube.com/watch?v=D7DVSZ_poHk", "https://www.youtube.com/watch?v=RJnMWK9mrgQ", "https://www.youtube.com/watch?v=uDC0X3w3Cv8"]
 
 
@@ -132,23 +133,40 @@ completeSongs.forEach(function (song){
   artistColumn.insertAdjacentHTML("beforeend", `<p>${song.artist}</p>`)
   linkColumn.insertAdjacentHTML("beforeend", `<a href="${song.link}">Listen</a></p>`)
   });
-    console.log(completeSongs)
 }
 
+function shuffleArray(){
+  for(let i = completeSongs.length-1; i > 0; i--){
+    let randomValue = Math.floor(Math.random() * (i+1))
+    let memory = completeSongs[i]
+    completeSongs[i] = completeSongs[randomValue]
+    completeSongs[randomValue] = memory
+  }
+}
 
-
-
+function displaySongLength(){
+  songLengthHeading.innerHTML = `Songs: ${completeSongs.length}`
+}
 
 // click event to add and display songs
 add.onclick = function() {
   emptyDisplay();
   addSongInfo();
   displaySongInfo();
+  displaySongLength();
 };
 // click event to clear songs
 clear.onclick = function() {
   emptyDisplay();
   emptySongArray();
+  displaySongLength();
+}
+//click event to shuffle songs
+shuffle.onclick = function(){
+  shuffleArray();
+  emptyDisplay();
+  displaySongInfo();
 }
 // function call to display stored songs
 displaySongInfo();
+displaySongLength();
