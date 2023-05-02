@@ -167,6 +167,6 @@ shuffle.onclick = function(){
   emptyDisplay();
   displaySongInfo();
 }
-// function call to display stored songs
+// function call to display stored song
 displaySongInfo();
 displaySongLength();
